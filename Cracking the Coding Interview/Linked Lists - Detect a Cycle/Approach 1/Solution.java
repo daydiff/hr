@@ -14,7 +14,6 @@ boolean hasCycle(Node head) {
     }
     ArrayList<Node> nodes = new ArrayList<Node>();
     Node node = head;
-    int moves = 0, i = 0;
     do {
         if (node == null) {
             return false;
@@ -23,11 +22,5 @@ boolean hasCycle(Node head) {
         }
         nodes.add(node);
         node = node.next;
-        moves++;
-    } while (moves <= 100);
-    
-    if (moves > 100) {
-        return true;
-    }
-    return false;
+    } while (true);    
 }
