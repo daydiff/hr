@@ -13,14 +13,13 @@ boolean hasCycle(Node head) {
         return false;
     }
     Node slow = head;
-	Node fast = head.next;
-    do {
-        if (slow == null || fast == null) {
-            return false;
-        } else if (slow == fast) {
-            return true;
-        }
+	Node fast = head;
+    while (fast != null && fast.next != null) {
         slow = slow.next;
-		fast = fast.next != null ? fast.next.next : fast.next;
-    } while (true);    
+		fast = fast.next.next;
+		if (slow == fast) {
+			return true;
+		}
+	}
+    return false;
 }
