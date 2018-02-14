@@ -7,15 +7,16 @@ import java.util.regex.*;
 public class Solution {
     
     public static boolean isPrime(int number) {
-        if (number <= 1) return false;
+        if (number < 2) return false;
         if (number < 4) return true;
-        int i = 2;
-        int up = number;
+		if (number % 2 == 0 || number % 3 == 0) return false;
+        int i = 3;
+        int up = (int)Math.sqrt(number);
         while (i <= up) {
+            i += 2;
             if (number % i == 0) {
                 return false;
             }
-            up = number / ++i;
         }
         return true;
     }
