@@ -9,13 +9,13 @@ public class Solution {
     public static boolean isPrime(int number) {
         if (number < 2) return false;
         if (number < 4) return true;
-		if (number % 2 == 0 || number % 3 == 0) return false;
+        if (number % 2 == 0 || number % 3 == 0) return false;
         int up = (int)Math.sqrt(number);
-		for (int i = 3; i <= up; i += 2) {
-			if (number % i == 0) {
+        for (int i = 3; i <= up; i += 2) {
+            if (number % i == 0) {
                 return false;
             }
-		}
+        }
         return true;
     }
 
